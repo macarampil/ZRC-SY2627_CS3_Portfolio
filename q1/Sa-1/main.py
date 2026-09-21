@@ -26,11 +26,17 @@ class AssignmentSubmission:
 
 
     def add_file(self, filename):
+        if self.get_grade() is not None:
+            print(f"[Error] Cannot attach '{filename}'. {self.student_name}'s assignment has already been graded.")
+            return
         if not self.__is_duplicate(filename):
             self.__submitted_files.append(filename)
             print(f"[Success] {self.student_name} attached '{filename}'. Total files {len(self.__submitted_files)}")
 
     def remove_file(self, filename):
+        if self.get_grade() is not None:
+            print(f"[Error] Cannot remove '{filename}'. {self.student_name}'s assignment has already been graded.")
+            return
         if filename in self.__submitted_files:
             self.__submitted_files.remove(filename)
             print(f"[Success] {self.student_name} removed '{filename}'")
