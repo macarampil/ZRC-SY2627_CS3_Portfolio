@@ -1,0 +1,1 @@
+Using "@property" makes code easier to read compared to traditional 'get_' and 'set_' methods because we can access and modify attributes like regular variables instead of calling separate methods. It also makes the code simpler, cleaner, and easier to understand while still allowing us to control access to and changes in the attributes.
